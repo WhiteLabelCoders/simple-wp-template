@@ -1,0 +1,55 @@
+.hero {
+
+    &__column {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        padding-top: rem(60);
+        text-align: center;
+
+        @include media-breakpoint-up(wp-md) {
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+
+    &__heading {
+        margin-bottom: rem(32);
+        font-size: rem(40);
+    }
+
+    &__text {
+        margin-top: 0;
+        margin-bottom: rem(30);
+        font-size: rem(26);
+        font-weight: 300;
+        color: var(--gray);
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem(30);
+        }
+    }
+
+
+    &__button {
+        a {
+            @extend .button;
+            @extend .button--blue;
+        }
+    }
+
+    /* overide navtive block style */
+    .hero__wrapper {
+        gap: rem(50);
+    }
+
+    .hero__buttons,
+    .hero__buttons.wp-block-buttons {
+        @include media-breakpoint-up(wp-md) {
+            justify-content: flex-start;
+        }
+    }
+}

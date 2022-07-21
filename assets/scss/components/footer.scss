@@ -1,0 +1,42 @@
+.footer {
+    padding: rem(30) 0;
+
+    &__wrapper {
+        padding-top: rem(20);
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--gray);
+    }
+
+
+    &__menu {
+        margin-bottom: rem(40);
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+            flex-direction: row;
+        }
+
+        &-item {
+            margin: rem(15) 0;
+
+            @include media-breakpoint-up(lg) {
+                margin: 0 rem(15);
+            }
+
+
+            a {
+                font-size: rem(26);
+                color: var(--gray);
+
+                @include media-breakpoint-up(lg) {
+                    font-size: rem(20);
+                }
+            }
+        }
+    }
+}

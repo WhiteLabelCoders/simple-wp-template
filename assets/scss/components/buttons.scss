@@ -1,0 +1,20 @@
+/* overides for gutenberg */
+
+.button {
+    padding: rem(12) rem(24);
+    font-size: rem(20);
+
+    &--blue {
+        background-color: var(--blue);
+        color: var(--white);
+        border: 2px solid var(--blue);
+        transition: background-color 0.2s linear, color 0.2s linear;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--white);
+            color: var(--blue);
+        }
+    }
+}

@@ -1,0 +1,49 @@
+//PX to REM
+
+@function rem($size) {
+    $remSize: calc($size / $base-font-size );
+    @return $remSize * 1rem;
+}
+
+//Custom media queries up
+
+@mixin media-breakpoint-up($breakpoint) {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+// $min-font-size - min font size for responsive range
+// $max-font-size - max font size for responsive range
+// $min-vw - min width responsive range
+// $max-vw - max width responsive range
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        & {
+
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}

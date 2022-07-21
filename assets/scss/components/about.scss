@@ -1,0 +1,121 @@
+.about {
+
+    &__list {
+        margin: rem(60) 0;
+        position: relative;
+
+        &-element {
+            position: relative;
+            margin: rem(30) 0;
+            padding: rem(30);
+            width: 100%;
+            display: flex;
+            background-color: var(--white);
+            border-radius: var(--small-radius);
+            border: 1px solid var(--gray);
+            box-shadow: rem(8) rem(8) rem(24) 0 var(--gray);
+            z-index: 2;
+
+            @include media-breakpoint-up(lg) {
+                margin: rem(60) 0;
+                padding: rem(50);
+                width: rem(300);
+            }
+
+            &-heading {
+                margin-top: 0;
+                margin-bottom: rem(20);
+                font-size: rem(22);
+
+                @include media-breakpoint-up(lg) {
+                    font-size: rem(16);
+                }
+            }
+
+            &-description {
+                margin-bottom: 0;
+                font-size: rem(18);
+
+                @include media-breakpoint-up(lg) {
+                    font-size: rem(14);
+                }
+            }
+        }
+    }
+
+    &__column {
+
+        &--image {
+            display: none;
+
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                display: block;
+            }
+
+        }
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+
+            .about__list-element {
+
+                &:first-child,
+                &:last-child {
+
+                    @include media-breakpoint-up(lg) {
+                        right: rem(-185);
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        right: rem(-225);
+                    }
+                }
+            }
+        }
+
+        &--right {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+
+            .about__list-element {
+
+                &:first-child,
+                &:last-child {
+
+                    @include media-breakpoint-up(lg) {
+                        left: rem(-185);
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        left: rem(-225);
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        opacity: 0.8;
+    }
+
+
+    // overides 
+
+    .about__list {
+        gap: rem(0);
+
+        @include media-breakpoint-up(wp-md) {
+            gap: rem(52);
+        }
+
+        @include media-breakpoint-up(lg) {
+            gap: rem(20);
+        }
+    }
+}

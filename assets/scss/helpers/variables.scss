@@ -1,0 +1,82 @@
+@import 'mixins';
+
+
+
+//If you want use rem to px function define this in pixels exclude 'px'
+
+$base-font-size: 16;
+
+// Grid
+
+$grid-gutter-width: 2rem;
+
+// Container max-width
+
+$container-max-widths: (
+    xs: 100%,
+    sm: 90%,
+    md: 85%,
+    xl: rem(1227)
+);
+
+//breakpoints
+
+$grid-breakpoints: (
+    // Start
+    xxs: 0,
+    // Phone
+    xs: 375px,
+    // Phone
+    sm: 576px,
+    // Tablet
+    md: 768px,
+    // wp tablet
+    wp-md: 781px,
+    // Tablet
+    lg: 992px,
+    // Desktop
+    xl: 1200px,
+    // Desktop
+    xxl: 1440px,
+    // Desktop
+    3xl: 1920px,
+    // Large desktop
+    4xl: 2560px
+);
+
+
+//Responsive Fonts
+
+$min_width: map-get($grid-breakpoints, "xs"); // min width responsive range
+$max_width: map-get($grid-breakpoints, "xl"); // max width responsive range
+$min_font: 12px; // min font size for responsive range
+$max_font: 16px; // max font size for responsive range
+
+
+//Root variables
+
+:root {
+    // fonts
+    --primary: 'Open Sans', sans-serif;
+
+    // font-sizes
+    --f10: 1rem;
+    --f14: 1.4rem;
+    --f16: 1.6rem;
+    --f20: 2rem;
+    --f24: 2.4rem;
+    --f30: 3rem;
+    --f36: 3.6rem;
+    --f40: 4rem;
+    --f48: 4.8rem;
+
+    // colors
+    --blue: #217BF4;
+    --black: #000;
+    --gray: #8b9098;
+    --white: #fff;
+
+    //border-radius
+    --small-radius: 2rem;
+    --full-radius: 9999px;
+}

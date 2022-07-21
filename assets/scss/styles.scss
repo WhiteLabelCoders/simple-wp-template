@@ -1,0 +1,13 @@
+@import './helpers/variables.scss';
+@import './helpers/mixins.scss';
+@import './common/global.scss';
+
+//reusable components
+@import './components/section.scss';
+@import './components/buttons.scss';
+
+//components
+@import './components/header.scss';
+@import './components/hero.scss';
+@import './components/about.scss';
+@import './components/footer.scss';

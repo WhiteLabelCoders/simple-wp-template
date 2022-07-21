@@ -1,0 +1,30 @@
+.section {
+
+    margin: rem(60) 0;
+
+    &__header {
+        width: 100%;
+        max-width: rem(600);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__heading {
+        font-size: rem(40);
+    }
+
+    &__subheading {
+        font-size: rem(18);
+        line-height: 1.6;
+        font-weight: 500;
+        color: var(--gray);
+
+        @include media-breakpoint-up(xl) {
+            font-size: rem(16);
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        margin: rem(120) 0;
+    }
+}

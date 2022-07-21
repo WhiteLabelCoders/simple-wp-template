@@ -1,0 +1,130 @@
+.header {
+    padding: rem(15) 0;
+    background-color: var(--white);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--white);
+        z-index: 2;
+    }
+
+    &__link {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__navigation {
+        position: absolute;
+        top: rem(138);
+        left: 0;
+        padding: rem(30) 0;
+        width: 100%;
+        background-color: var(--white);
+        display: none;
+
+        &.js--active {
+            border-bottom: 1px solid var(--gray);
+        }
+
+        @include media-breakpoint-up(wp-md) {
+            position: unset;
+            top: unset;
+            left: unset;
+            padding: 0;
+            width: auto;
+            display: block;
+            transform: unset;
+        }
+    }
+
+
+    &__menu {
+        text-align: center;
+
+        @include media-breakpoint-up(wp-md) {
+            text-align: inital;
+            display: flex;
+        }
+
+        &-item {
+            margin: rem(20) 0;
+
+            @include media-breakpoint-up(wp-md) {
+
+                margin: 0 rem(15);
+            }
+
+            a {
+                font-size: rem(36);
+                line-height: 1.4;
+                color: var(--gray);
+                transition: color 0.2s linear;
+
+                &:hover {
+                    color: var(--black);
+                }
+
+                @include media-breakpoint-up(wp-md) {
+                    font-size: rem(24);
+                }
+            }
+        }
+    }
+
+    &__burger {
+        position: relative;
+        width: rem(60);
+        height: rem(50);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        @include media-breakpoint-up(wp-md) {
+            display: none;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--blue);
+            pointer-events: none;
+            transition: transform 0.3s linear, opacity 0.2s linear;
+
+            &:first-child {
+                top: 7px;
+            }
+
+            &:nth-child(2) {
+                top: 17px;
+            }
+
+            &:last-child {
+                top: 28px;
+            }
+        }
+
+        &.js--active {
+            span {
+                background-color: var(--black);
+
+                &:first-child {
+                    top: 17px;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    top: 17px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
